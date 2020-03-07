@@ -1,0 +1,427 @@
+{
+	"info": {
+		"name": "Curso TDD",
+		"_postman_id": "6ab9dead-3455-d30e-1e63-89ecb6809b5b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"description": "",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{host}}/client",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"client"
+							]
+						},
+						"description": "List all clients"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Leo\",\n\t\"cpf\": \"00217064175\",\n\t\"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}/client",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"client"
+							]
+						},
+						"description": "Create a new client"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/client/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"client",
+								"2"
+							]
+						},
+						"description": "Show an client"
+					},
+					"response": []
+				},
+				{
+					"name": "List Accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/client/2/accounts",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"client",
+								"2",
+								"accounts"
+							]
+						},
+						"description": "List client accounts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"description": "",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": 2\n}"
+						},
+						"url": {
+							"raw": "{{host}}/account",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"account"
+							]
+						},
+						"description": "Create a new account"
+					},
+					"response": []
+				},
+				{
+					"name": "Balance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/account/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"account",
+								"2"
+							]
+						},
+						"description": "Extract of the account"
+					},
+					"response": []
+				},
+				{
+					"name": "Extract",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/account/2/extract?month=2018-02",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"account",
+								"2",
+								"extract"
+							],
+							"query": [
+								{
+									"key": "month",
+									"value": "2018-02",
+									"equals": true
+								}
+							]
+						},
+						"description": "Extract of the account"
+					},
+					"response": []
+				},
+				{
+					"name": "Activate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/account/2/activate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"account",
+								"2",
+								"activate"
+							]
+						},
+						"description": "Activate an account"
+					},
+					"response": []
+				},
+				{
+					"name": "Deactivate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/account/2/deactivate",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"account",
+								"2",
+								"deactivate"
+							]
+						},
+						"description": "Deactivate an account"
+					},
+					"response": []
+				},
+				{
+					"name": "Deposit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\": 120\n}"
+						},
+						"url": {
+							"raw": "{{host}}/account/2/deposit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"account",
+								"2",
+								"deposit"
+							]
+						},
+						"description": "Deposit money in the account"
+					},
+					"response": []
+				},
+				{
+					"name": "Withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\": 20\n}"
+						},
+						"url": {
+							"raw": "{{host}}/account/2/withdraw",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"account",
+								"2",
+								"withdraw"
+							]
+						},
+						"description": "Withdraw money from the account"
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"account_id\": 5,\n\t\"amount\": 20\n}"
+						},
+						"url": {
+							"raw": "{{host}}/account/2/transfer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"account",
+								"2",
+								"transfer"
+							]
+						},
+						"description": "Withdraw money from the account"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bankslip",
+			"description": "",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"account_id\": 2,\n\t\"due_date\": \"2018-12-31\",\n\t\"value\": 120\n}"
+						},
+						"url": {
+							"raw": "{{host}}/bankslip",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bankslip"
+							]
+						},
+						"description": "Create a new bankslip"
+					},
+					"response": []
+				},
+				{
+					"name": "Pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"barcode\": \"20181231000002000000012000\",\n\t\"amount\": 120\n}"
+						},
+						"url": {
+							"raw": "{{host}}/bankslip/pay",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bankslip",
+								"pay"
+							]
+						},
+						"description": "Pay a bankslip"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
